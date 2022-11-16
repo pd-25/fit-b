@@ -13,10 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
+
+/*  Admin Route   */
+
+
+
+
+/*  Admin Route End   */
 Route::get('/', function () {
-    return view('User.Master.master');
+    return view('User.Home.index');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

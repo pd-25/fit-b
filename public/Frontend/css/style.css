@@ -671,10 +671,14 @@ header.sticky {
 .logo {
     display: inline-block;
     vertical-align: inherit;
-    width: 15%;
+    width: 14%;
+    /* size: 50px; */
     position: relative;
     z-index: 10;
+    /* margin-bottom: auto; */
+    
 }
+
 
 .topbar > form {
     display: inline-block;
@@ -2672,6 +2676,9 @@ li.twitter {
 
 li.google {
     background: #f24756;
+}
+li.instagram {
+    background: #ed3e7b;
 }
 
 .socials > li a span {
