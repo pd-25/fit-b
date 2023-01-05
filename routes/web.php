@@ -1,29 +1,33 @@
 <?php
 
+use App\Http\Controllers\Admin\Dashboard\DashboardController;
+use App\Http\Controllers\Admin\User\UserController;
+use App\Http\Controllers\CustomAuth\AdminAuthController;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 
 
 /*  Admin Route   */
 
+Route::prefix('superadmin')->group( function () {
+Route::get('login', [AdminAuthController::class, 'index'])->name('admin.login');
+Route::post('login', [AdminAuthController::class, 'login'])->name('admin.loggedin');
 
+});
+
+Route::middleware('adminAuth')->prefix('superadmin')->group(function () {
+    Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
+    Route::resource("users", UserController::class);
+    Route::get('logout', [DashboardController::class, 'logout'])->name('admin.logout');
+
+});
 
 
 /*  Admin Route End   */
 Route::get('/', function () {
     return view('User.Home.index');
 });
+
+//next login logic
 
 Route::get('/dashboard', function () {
     return view('dashboard');
