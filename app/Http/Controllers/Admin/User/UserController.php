@@ -3,10 +3,19 @@
 namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\User\UserInterface;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class UserController extends Controller
 {
+    private $userRepository;
+
+    public function __construct(UserInterface $userRepository) 
+    {
+        $this->userRepository = $userRepository;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,6 +23,8 @@ class UserController extends Controller
      */
     public function index()
     {
+        $data["users"] = $this->userRepository->getAllUsers();
+        // dd($data);
         return view("Admin.Users.index");
     }
 
@@ -24,7 +35,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view("Admin.Users.create");
     }
 
     /**

@@ -4,15 +4,15 @@
 @section('content')
 <div class="card">
     <div class="card-title">
-        {{-- <h4>Table Bordered </h4> --}}
-        <label for="">Search: </label>
+      
+        
         <div class="float-left ml-2">
             <input class="form-control"  type="search" placeholder="Search user">
         </div>
         
 
         
-        <button class="btn btn-lg btn-primary float-right"><i class="ti-plus"></i></button>
+        <a href="{{ route("users.create") }}" class="btn btn-sm btn-primary float-right"><i class="ti-plus"></i></a>
     </div><br>
     <div class="card-body">
         <div class="table-responsive">

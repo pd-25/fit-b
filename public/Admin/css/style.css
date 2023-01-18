@@ -772,8 +772,10 @@ a.dt-button.active:not(.disabled) {
   color: #5873fe;
 }
 .dropdown-content-body li {
-  padding: 15px;
-  border-top: 1px solid #eef5f9;
+  /* padding: 15px;
+  border-top: 1px solid #eef5f9; */
+  padding: 12px;
+    border-top: 11px solid #eef5f9;
 }
 .dropdown-content-body li.active,
 .dropdown-content-body li:focus,

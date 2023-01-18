@@ -6,13 +6,12 @@
     <title>FITBOUNCER:DASHBOARD</title>
  
     <!-- Styles -->
-    <link href="{{ asset('Admin/css/lib/calendar2/pignose.calendar.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('Admin/css/lib/chartist/chartist.min.css') }}" rel="stylesheet">
+  
     <link href="{{ asset('Admin/css/lib/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('Admin/css/lib/themify-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('Admin/css/lib/owl.carousel.min.css') }}" rel="stylesheet" />
+    
     <link href="{{ asset('Admin/css/lib/owl.theme.default.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('Admin/css/lib/weather-icons.css') }}" rel="stylesheet" />
+    
     <link href="{{ asset('Admin/css/lib/menubar/sidebar.css') }}" rel="stylesheet">
     <link href="{{ asset('Admin/css/lib/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('Admin/css/lib/helper.css') }}" rel="stylesheet">
@@ -39,12 +38,12 @@
                     <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Users <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li><a href="{{ route("users.index") }}">Users</a></li>
-                            <li><a href="{{ route("users.create") }}">Add User</a></li>
+                            <li class={{ Route::is('users.index') ? 'active' : '' }}><a href="{{ route("users.index") }}">Users</a></li>
+                            <li class={{ Route::is('users.create') ? 'active' : '' }}><a href="{{ route("users.create") }}">Add User</a></li>
                             
                         </ul>
                     </li>
-                    <li><a href="app-event-calender.html"><i class="ti-calendar"></i> Calender </a></li>
+                    {{-- <li><a href="app-event-calender.html"><i class="ti-calendar"></i> Calender </a></li>
                     <li><a href="app-email.html"><i class="ti-email"></i> Email</a></li>
                     <li><a href="app-profile.html"><i class="ti-user"></i> Profile</a></li>
                     <li><a href="app-widget-card.html"><i class="ti-layout-grid2-alt"></i> Widget</a></li>
@@ -125,7 +124,7 @@
                             <li><a href="page-reset-password.html">Forgot password</a></li>
                         </ul>
                     </li>
-                    <li><a href="../documentation/index.html"><i class="ti-file"></i> Documentation</a></li>
+                    <li><a href="../documentation/index.html"><i class="ti-file"></i> Documentation</a></li> --}}
                     <li><a href="{{ route('admin.logout') }}"><i class="ti-close"></i> Logout</a></li>
                 </ul>
             </div>
@@ -145,145 +144,7 @@
                         </div>
                     </div>
                     <div class="float-right">
-                        <div class="dropdown dib">
-                            <div class="header-icon" data-toggle="dropdown">
-                                <i class="ti-bell"></i>
-                                <div class="drop-down dropdown-menu dropdown-menu-right">
-                                    <div class="dropdown-content-heading">
-                                        <span class="text-left">Recent Notifications</span>
-                                    </div>
-                                    <div class="dropdown-content-body">
-                                        <ul>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
-                                                        <div class="notification-text">5 members joined today </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mariam</div>
-                                                        <div class="notification-text">likes a photo of you</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Tasnim</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="text-center">
-                                                <a href="#" class="more-link">See All</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dropdown dib">
-                            <div class="header-icon" data-toggle="dropdown">
-                                <i class="ti-email"></i>
-                                <div class="drop-down dropdown-menu dropdown-menu-right">
-                                    <div class="dropdown-content-heading">
-                                        <span class="text-left">2 New Messages</span>
-                                        <a href="email.html">
-                                            <i class="ti-pencil-alt pull-right"></i>
-                                        </a>
-                                    </div>
-                                    <div class="dropdown-content-body">
-                                        <ul>
-                                            <li class="notification-unread">
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="images/avatar/1.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Michael Qin</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="notification-unread">
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="images/avatar/2.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Michael Qin</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="images/avatar/2.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="text-center">
-                                                <a href="#" class="more-link">See All</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      
                         <div class="dropdown dib">
                        
                             <div class="header-icon dropdown">
@@ -346,22 +207,7 @@
     <script src="{{ asset('Admin/js/scripts.js') }}"></script>
     <!-- bootstrap -->
 
-    <script src="{{ asset('Admin/js/lib/calendar-2/moment.latest.min.js') }}"></script>
-    <script src="{{ asset('Admin/js/lib/calendar-2/pignose.calendar.min.js') }}"></script>
-    <script src="{{ asset('Admin/js/lib/calendar-2/pignose.init.js') }}"></script>
-
-
-    <script src="{{ asset('Admin/js/lib/weather/jquery.simpleWeather.min.js') }}"></script>
-    <script src="{{ asset('Admin/js/lib/weather/weather-init.js') }}"></script>
-    <script src="{{ asset('Admin/js/lib/circle-progress/circle-progress.min.js') }}"></script>
-    <script src="{{ asset('Admin/js/lib/circle-progress/circle-progress-init.js') }}"></script>
-    <script src="{{ asset('Admin/js/lib/chartist/chartist.min.js') }}"></script>
-    <script src="{{ asset('Admin/js/lib/sparklinechart/jquery.sparkline.min.js') }}"></script>
-    <script src="{{ asset('Admin/js/lib/sparklinechart/sparkline.init.js') }}"></script>
-    <script src="{{ asset('Admin/js/lib/owl-carousel/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('Admin/js/lib/owl-carousel/owl.carousel-init.js') }}"></script>
-    <!-- scripit init-->
-    <script src="{{ asset('Admin/js/dashboard2.js') }}"></script>
+    
 </body>
 
 </html>
