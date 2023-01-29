@@ -27,6 +27,11 @@ class SellerAuthController extends Controller
         
     }
 
+
+    public function logout() {
+        
+    }
+
     
     public function showRegisterForm(){
         return view("CustomAuth.Seller.register");
