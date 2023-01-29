@@ -3,6 +3,7 @@
         <figure><img src="{{ asset('Frontend/images/resources/timeline-1.jpg') }}" alt=""></figure>
         <div class="add-btn">
             <span>1205 followers</span>
+            <span>10,000 points</span>
             <a href="#" title="" data-ripple="">Add Friend</a>
         </div>
         <form class="edit-phto">

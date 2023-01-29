@@ -1,3 +1,6 @@
+
+<!-- Here all super admin routes is decleared -->
+
 <?php
 
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
@@ -24,6 +27,7 @@ Route::middleware('adminAuth')->prefix('superadmin')->group(function () {
 
 /*  Admin Route End   */
 Route::get('/', function () {
+    // echo);exit;
     return view('User.Home.index');
 });
 
