@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class GymDashboardController extends Controller
 {
     public function myGymDashboard(){
-        dd("gym dashboard");
+        return view("Mygym.Dashboard.dashboard");
     }
 
     public function logout() {

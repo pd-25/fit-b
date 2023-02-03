@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
 	<title>FITBOUNCER</title>
-    <link rel="icon" href="{{ asset('Frontend/images/fav.png') }}" type="image/png" sizes="16x16"> 
+    <link rel="icon" href="{{ asset('Frontend/images/Final-removebg-preview 1 (4).png') }}" type="image/png" sizes="16x16"> 
     
     <link rel="stylesheet" href="{{ asset('Frontend/css/main.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Frontend/css/style.css') }}">
