@@ -1,4 +1,4 @@
-<section>
+{{-- <section>
     <div class="feature-photo">
         <figure><img src="{{ asset('Frontend/images/resources/timeline-1.jpg') }}" alt=""></figure>
         <div class="add-btn">
@@ -51,4 +51,4 @@
             </div>
         </div>
     </div>
-</section><!-- top area -->
+</section><!-- top area --> --}}

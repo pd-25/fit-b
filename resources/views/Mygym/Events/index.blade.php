@@ -14,7 +14,7 @@
                 <div class="left">
                     <h6 class="text-medium mb-30">Sales History</h6>
                 </div>
-                <a href="{{ route("gym-my-events.create") }}" class="btn btn-primary btn-lg"><b>New event</b> </a>
+                <a href="{{ route("my-gym-events.create") }}" class="btn btn-primary btn-lg"><b>New event</b> </a>
                 <div class="right">
                    
                     <div class="select-style-1">

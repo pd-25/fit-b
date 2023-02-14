@@ -21,52 +21,33 @@
             <h4 class="widget-title">Shortcuts</h4>
             <ul class="naves">
                 <li>
-                    <i class="ti-clipboard"></i>
-                    <a href="newsfeed.html" title="">News feed</a>
+                    <i class="ti-user"></i>
+                    <a href="#" title="">Profile</a>
+                </li>
+                <li>
+                    <i class="ti-widget"></i>
+                    <a href="#" title="">Events</a>
                 </li>
                 <li>
                     <i class="ti-mouse-alt"></i>
-                    <a href="inbox.html" title="">Inbox</a>
+                    <a href="#" title="">Challenges</a>
                 </li>
                 <li>
                     <i class="ti-files"></i>
-                    <a href="fav-page.html" title="">My pages</a>
+                    <a href="#" title="">Products</a>
                 </li>
                 <li>
                     <i class="ti-user"></i>
-                    <a href="timeline-friends.html" title="">friends</a>
+                    <a href="#" title="">Gym</a>
                 </li>
-                <li>
-                    <i class="ti-image"></i>
-                    <a href="timeline-photos.html" title="">images</a>
-                </li>
-                <li>
-                    <i class="ti-video-camera"></i>
-                    <a href="timeline-videos.html" title="">videos</a>
-                </li>
-                <li>
-                    <i class="ti-comments-smiley"></i>
-                    <a href="messages.html" title="">Messages</a>
-                </li>
-                <li>
-                    <i class="ti-bell"></i>
-                    <a href="notifications.html" title="">Notifications</a>
-                </li>
-                <li>
-                    <i class="ti-share"></i>
-                    <a href="people-nearby.html" title="">People Nearby</a>
-                </li>
-                <li>
-                    <i class="fa fa-bar-chart-o"></i>
-                    <a href="insights.html" title="">insights</a>
-                </li>
+                
                 <li>
                     <i class="ti-power-off"></i>
                     <a href="landing.html" title="">Logout</a>
                 </li>
             </ul>
         </div><!-- Shortcuts -->
-        <div class="widget">
+        {{-- <div class="widget">
             <h4 class="widget-title">Recent Activity</h4>
             <ul class="activitiez">
                 <li>
@@ -90,8 +71,8 @@
                     </div>
                 </li>
             </ul>
-        </div><!-- recent activites -->
-        <div class="widget stick-widget">
+        </div><!-- recent activites --> --}}
+        {{-- <div class="widget stick-widget">
             <h4 class="widget-title">Who's follownig</h4>
             <ul class="followers">
                 <li>
@@ -130,6 +111,6 @@
                     </div>
                 </li>
             </ul>
-        </div><!-- who's following -->
+        </div><!-- who's following --> --}}
     </aside>
 <!-- sidebar -->

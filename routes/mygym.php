@@ -19,7 +19,7 @@ Route::prefix('my-gym/'.request()->ip().'/access')->group( function () {
 
 Route::middleware('mygym')->prefix('gym-administrator')->group(function () {
     Route::get('mygym-dashboard', [GymDashboardController::class, 'myGymDashboard'])->name('mygym.dashboard');
-    Route::resource('gym-my-events', EventController::class);
+    Route::resource('my-gym-events', EventController::class);
     Route::get('logout', [GymDashboardController::class, 'logout'])->name('mygym.logout');
 
 });

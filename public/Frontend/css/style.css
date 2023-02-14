@@ -5411,6 +5411,10 @@ canvas {
     float: right;
     width: 100%;
 }
+/* .leftSide{
+    position: fixed;
+    z-index: 1;
+} */
 
 .sidebar.right {
     float: left;

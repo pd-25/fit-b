@@ -1,4 +1,4 @@
-<aside class="sidebar static">
+{{-- <aside class="sidebar static">
     <div class="widget">
         <div class="banner medium-opacity bluesh">
             <div style="background-image: url(images/resources/baner-widgetbg.jpg)" class="bg-image"></div>
@@ -178,4 +178,4 @@
             </div>
         </div>
     </div><!-- friends list sidebar -->
-</aside>
+</aside> --}}

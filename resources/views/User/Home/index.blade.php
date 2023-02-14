@@ -13,7 +13,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="row merged20" id="page-contents">
-							<div class="col-lg-3">
+							<div class="col-lg-3 leftSide">
 							@include('User.Home.leftSideBar');
 							</div>
 							<div class="col-lg-6">
