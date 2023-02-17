@@ -338,17 +338,19 @@
     <!-- ======== main-wrapper end =========== -->
 
     <!-- ========= All Javascript files linkup ======== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{{ asset("Gym/assets/js/bootstrap.bundle.min.js") }}"></script>
     <script src="{{ asset("Gym/assets/js/Chart.min.js") }}"></script>
-    <script src="{{ asset("Gym/assets/js/dynamic-pie-chart.js") }}"></script>
+    {{-- <script src="{{ asset("Gym/assets/js/dynamic-pie-chart.js") }}"></script>
     <script src="{{ asset("Gym/assets/js/moment.min.js") }}"></script>
     <script src="{{ asset("Gym/assets/js/fullcalendar.js") }}"></script>
     <script src="{{ asset("Gym/assets/js/jvectormap.min.js") }}"></script>
     <script src="{{ asset("Gym/assets/js/world-merc.js") }}"></script>
-    <script src="{{ asset("Gym/assets/js/polyfill.js") }}"></script>
+    <script src="{{ asset("Gym/assets/js/polyfill.js") }}"></script> --}}
     <script src="{{ asset("Gym/assets/js/main.js") }}"></script>
-
+@yield('eventCreateForm')
     <script>
+      
       // ======== jvectormap activation
       var markers = [
         { name: "Egypt", coords: [26.8206, 30.8025] },

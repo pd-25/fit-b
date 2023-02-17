@@ -178,7 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         //pd Provider
-        // App\RepositoryServiceProvider\UserserviceProvider::class
+        
         App\ServiceProvider\User\UserserviceProvider::class
     ],
 

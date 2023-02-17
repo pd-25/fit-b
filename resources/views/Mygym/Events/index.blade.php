@@ -2,12 +2,7 @@
 @section('title', 'Event|MyGym')
 @section('content')
 <div class="row">
-    {{-- <div class="col-lg-5">
-        <div class="card-style calendar-card mb-30">
-            <div id="calendar-mini"></div>
-        </div>
-    </div> --}}
-    <!-- End Col -->
+   
     <div class="col-lg-12">
         <div class="card-style mb-30">
             <div class="title d-flex flex-wrap align-items-center justify-content-between">
