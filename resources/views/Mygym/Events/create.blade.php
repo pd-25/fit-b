@@ -1,198 +1,220 @@
 @extends('Mygym.Master.masterLayout');
 @section('title', 'Create-Event|MyGym')
 @section('content')
-    <!-- MultiStep Form -->
-{{-- <div class="container-fluid" id="grad1"> --}}
-    <div class="row justify-content-center mt-0">
-        <div class="col-11 col-sm-9 col-md-7 col-lg-9 text-center p-0 mt-3 mb-2">
-            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-                <h2><strong>Create a new event</strong></h2>
-                <p>Fill all form field to go to next step</p>
-                <div class="row">
-                    <div class="col-md-12 mx-0">
-                        <form id="msform">
-                            <!-- progressbar -->
-                            <ul id="progressbar">
-                                <li class="active" id=""><strong>Event</strong></li>
-                                <li id=""><strong>Sub events</strong></li>
-                                <li id=""><strong>Preview</strong></li>
-                                <li id=""><strong>Finish</strong></li>
-                            </ul>
-                            <!-- fieldsets -->
-                            <fieldset>
-                                <div class="form-card">
-                                    <h2 class="fs-title">Event Information</h2>
-                                    <input type="text" name="title" placeholder="Give a attractive title" required/>
-                                    <input type="text" name="short_decs" placeholder="Write in brief" required/>
-                                    <textarea name="description" placeholder="Description" required></textarea>
-                                    <input type="date" name="start_date" required>
-                                    <input type="date" name="ens_date" required>
-                                    <input type="text" name="venue" placeholder="Enter the venue" required>
+    <form action="" name="Events">
+        <div class="row justify-content-center">
+
+            <div class="col-lg-12">
+                <!-- input style start -->
+                <div class="card-style mb-30">
+                    <h6 class="mb-25">Fill event details</h6>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-style-1">
+                                <h6>Event title</label>
+                                    <input type="text" placeholder="Full Name" name="title"
+                                        value="{{ old('title') }}" />
+                                    @if ($errors->has('title'))
+                                        <div class="alert-danger">{{ $errors->first('title') }}</div>
+                                    @endif
+                            </div>
+                            <div class="input-style-2">
+                                <label>Venue </label>
+                                <input type="text" placeholder="venue" name="venue" value="{{ old('venue') }}" />
+                                @if ($errors->has('venue'))
+                                    <div class="alert-danger">{{ $errors->first('venue') }}</div>
+                                @endif
+                            </div>
+                            <div class="input-style-2">
+                                <label>Start date </label>
+                                <input type="date" name="start_date" value="{{ old('start_date') }}" />
+                                @if ($errors->has('start_date'))
+                                    <div class="alert-danger">{{ $errors->first('start_date') }}</div>
+                                @endif
+                            </div>
+
+                            <div class="input-style-2">
+                                <label>End date </label>
+                                <input type="date" name="end_date" value="{{ old('end_date') }}" />
+                                @if ($errors->has('end_date'))
+                                    <div class="alert-danger">{{ $errors->first('end_date') }}</div>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-style-2">
+                                <h6>Write in brief </h6>
+                                <input type="text" placeholder="Short description" name="short_desc"
+                                    value="{{ old('short_desc') }}" />
+                                @if ($errors->has('short_desc'))
+                                    <div class="alert-danger">{{ $errors->first('short_desc') }}</div>
+                                @endif
+
+                            </div>
+                            <div class="input-style-3">
+                                <label>Write all about this event </label>
+                                <textarea name="description" id="summernote" cols="30" rows="10"
+                                    placeholder="Discuss about the advantage, prize, venue, criteria etc ">{{ old('description') }}</textarea>
+                                @if ($errors->has('description'))
+                                    <div class="alert-danger">{{ $errors->first('description') }}</div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <h2>add sub-events</h2>
+                        <a class="btn btn-primary btn-lg" href="#subevents"><i class="lni lni-angle-double-down"></i></a>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row" id="subevents">
+            <div class="col-lg-6">
+                <div class="card-style mb-30">
+                    <div class="input-style-2">
+                        <h2 class="text-center">
+                            Sub-event- <button class="btn btn-circle btn-primary" disabled>1</button>
+                        </h2>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="input-style-1">
+                                    <h6>Sub-event name</label>
+                                        <input type="text" placeholder="Full Name"
+                                            name="addMoreSubEvent[0][sub_event_name]"
+                                            value="{{ old('sub_event_name') }}" />
+                                        @if ($errors->has('sub_event_name'))
+                                            <div class="alert-danger">{{ $errors->first('sub_event_name') }}</div>
+                                        @endif
                                 </div>
-                                <input type="button" name="next" class="next action-button" value="Next Step"/>
-                            </fieldset>
-                            <fieldset>
-                                <div class="form-card">
-                                    <h2 class="fs-title">Sub-event Information</h2>
-                                    <input type="text" name="sub_event_name" placeholder="game name"/>
-                                    <input type="text" name="sub_event_short_desc" placeholder="Write in short about the game"/>
-                                    <textarea name="sub_event_description" id="" cols="30" rows="10" placeholder="description"></textarea>
-                                    <input type="number" name="participant_age_limit" placeholder="provide a minimum age"/>
-                                    <input type="text" name="prize" placeholder="prize"/>
-                                    <button type="button" class="btn btn-primary btn-sm" onclick="addGame()"><i class="lni lni-plus" >Add game</i></button>
+
+                                <div class="input-style-1">
+                                    <label>Start date </label>
+                                    <input type="date" name="addMoreSubEvent[0][start_date]"
+                                        value="{{ old('start_date') }}" />
+                                    @if ($errors->has('start_date'))
+                                        <div class="alert-danger">{{ $errors->first('start_date') }}</div>
+                                    @endif
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="input-style-2">
+                                    <label>Participant age limit </label>
+                                    <input type="number" placeholder="participant age limit"
+                                        name="addMoreSubEvent[0][participant_age_limit]"
+                                        value="{{ old('participant_age_limit') }}" />
+                                    @if ($errors->has('participant_age_limit'))
+                                        <div class="alert-danger">{{ $errors->first('participant_age_limit') }}</div>
+                                    @endif
+                                </div>
+
+                                <div class="input-style-1">
+                                    <label>End date </label>
+                                    <input type="date" name="addMoreSubEvent[0][end_date]"
+                                        value="{{ old('end_date') }}" />
+                                    @if ($errors->has('end_date'))
+                                        <div class="alert-danger">{{ $errors->first('end_date') }}</div>
+                                    @endif
+                                </div>
+
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="input-style-2">
+                                    <h6>Write in brief </h6>
+                                    <input type="text" placeholder="Short description"
+                                        name="addMoreSubEvent[0][sub_event_short_desc]"
+                                        value="{{ old('sub_event_short_desc') }}" />
+                                    @if ($errors->has('sub_event_short_desc'))
+                                        <div class="alert-danger">{{ $errors->first('sub_event_short_desc') }}</div>
+                                    @endif
 
                                 </div>
-                                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                                <input type="button" name="next" class="next action-button" value="Next Step"/>
-                            </fieldset>
-                            <fieldset>
-                                <div class="form-card">
-                                    <h2 class="fs-title">Payment Information</h2>
-                                    <div class="radio-group">
-                                        <div class='radio' data-value="credit"><img src="https://i.imgur.com/XzOzVHZ.jpg" width="200px" height="100px"></div>
-                                        <div class='radio' data-value="paypal"><img src="https://i.imgur.com/jXjwZlj.jpg" width="200px" height="100px"></div>
-                                        <br>
-                                    </div>
-                                    <label class="pay">Card Holder Name*</label>
-                                    <input type="text" name="holdername" placeholder=""/>
-                                    <div class="row">
-                                        <div class="col-9">
-                                            <label class="pay">Card Number*</label>
-                                            <input type="text" name="cardno" placeholder=""/>
-                                        </div>
-                                        <div class="col-3">
-                                            <label class="pay">CVC*</label>
-                                            <input type="password" name="cvcpwd" placeholder="***"/>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <label class="pay">Expiry Date*</label>
-                                        </div>
-                                        <div class="col-9">
-                                            <select class="list-dt" id="month" name="expmonth">
-                                                <option selected>Month</option>
-                                                <option>January</option>
-                                                <option>February</option>
-                                                <option>March</option>
-                                                <option>April</option>
-                                                <option>May</option>
-                                                <option>June</option>
-                                                <option>July</option>
-                                                <option>August</option>
-                                                <option>September</option>
-                                                <option>October</option>
-                                                <option>November</option>
-                                                <option>December</option>
-                                            </select>
-                                            <select class="list-dt" id="year" name="expyear">
-                                                <option selected>Year</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="input-style-3">
+                                    <label>Write all about this event </label>
+                                    <textarea name="addMoreSubEvent[0][sub_event_description]" id="summernote" cols="30" rows="10"
+                                        placeholder="Discuss about the advantage, prize, venue, criteria etc ">{{ old('sub_event_description') }}</textarea>
+                                    @if ($errors->has('sub_event_description'))
+                                        <div class="alert-danger">{{ $errors->first('sub_event_description') }}</div>
+                                    @endif
                                 </div>
-                                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                                <input type="button" name="make_payment" class="next action-button" value="Confirm"/>
-                            </fieldset>
-                            <fieldset>
-                                <div class="form-card">
-                                    <h2 class="fs-title text-center">Success !</h2>
-                                    <br><br>
-                                    <div class="row justify-content-center">
-                                        <div class="col-3">
-                                            <img src="https://img.icons8.com/color/96/000000/ok--v2.png" class="fit-image">
-                                        </div>
-                                    </div>
-                                    <br><br>
-                                    <div class="row justify-content-center">
-                                        <div class="col-7 text-center">
-                                            <h5>You Have Successfully Signed Up</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </form>
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-{{-- </div> --}}
-@endsection
-@section('eventCreateForm')
-<script>
-    $(document).ready(function(){
-    
-    var current_fs, next_fs, previous_fs; //fieldsets
-    var opacity;
-    
-    $(".next").click(function(){
-        
-        current_fs = $(this).parent();
-        next_fs = $(this).parent().next();
-        
-        //Add Class Active
-        $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-        
-        //show the next fieldset
-        next_fs.show(); 
-        //hide the current fieldset with style
-        current_fs.animate({opacity: 0}, {
-            step: function(now) {
-                // for making fielset appear animation
-                opacity = 1 - now;
-    
-                current_fs.css({
-                    'display': 'none',
-                    'position': 'relative'
-                });
-                next_fs.css({'opacity': opacity});
-            }, 
-            duration: 600
-        });
-    });
-    
-    $(".previous").click(function(){
-        
-        current_fs = $(this).parent();
-        previous_fs = $(this).parent().prev();
-        
-        //Remove class active
-        $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-        
-        //show the previous fieldset
-        previous_fs.show();
-    
-        //hide the current fieldset with style
-        current_fs.animate({opacity: 0}, {
-            step: function(now) {
-                // for making fielset appear animation
-                opacity = 1 - now;
-    
-                current_fs.css({
-                    'display': 'none',
-                    'position': 'relative'
-                });
-                previous_fs.css({'opacity': opacity});
-            }, 
-            duration: 600
-        });
-    });
-    
-    $('.radio-group .radio').click(function(){
-        $(this).parent().find('.radio').removeClass('selected');
-        $(this).addClass('selected');
-    });
-    
-    $(".submit").click(function(){
-        return false;
-    })
-        
-    });
+            {{-- <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onbeforeunload_addeventlistener" target="_blank" rel="noopener noreferrer"></a> --}}
 
-    function addGame(){
-        alert('hello')
-    }
-</script>
-    
+
+            <div class="col-lg-6" id="addbutton">
+                <div class="text-center m-5 ">
+                    <button type="button" class="btn-lg btn-primary btn-circle" onclick="addMoreSubEvent(0)"><i
+                            class="lni lni-circle-plus"></i> Add more</button>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+@endsection
+@section('addMoreSubEvent')
+    <script>
+        // var i = 1;
+        var formNo = 1;
+
+        function addMoreSubEvent(i) {
+            // alert(i);
+            ++formNo;
+            newI = ++i;
+            // alert(i);
+            var newForm =
+                ' <div class="col-lg-6" id="subEvent'+formNo+'"><div class="card-style mb-30"><div class="input-style-2"><h2 class="text-center">Sub-event- <button class="btn btn-circle btn-primary" disabled>' +
+                formNo +
+                '</button></h2><div class="row mt-3"><div class="col-md-6"><div class="input-style-1"><h6>Sub-event name</label><input type="text" placeholder="Full Name" name="addMoreSubEvent[' +
+                i +
+                '][sub_event_name]" value="{{ old('"sub_event_name"') }}" />@if ($errors->has('"sub_event_name"'))<div class="alert-danger">{{ $errors->first('"sub_event_name"') }}</div> @endif</div><div class="input-style-1"><label>Start date </label><input type="date" name="addMoreSubEvent[' +
+                i +
+                '][start_date]" value="{{ old('"start_date"') }}" /> @if ($errors->has('"start_date"'))<div class="alert-danger">{{ $errors->first('"start_date"') }}</div>@endif</div></div><div class="col-md-6"> <div class="input-style-2"><label>Participant age limit </label><input type="number" placeholder="participant age limit" name="addMoreSubEvent[' +
+                i +
+                '][participant_age_limit]" value="{{ old('"participant_age_limit"') }}" />@if ($errors->has('"participant_age_limit"'))<div class="alert-danger">{{ $errors->first('"participant_age_limit"') }}</div>@endif </div><div class="input-style-1"><label>End date </label><input type="date" name="addMoreSubEvent[' +
+                i +
+                '][end_date]" value="{{ old('"end_date"') }}" />@if ($errors->has('"end_date"'))<div class="alert-danger">{{ $errors->first('"end_date"') }}</div> @endif</div></div><div class="col-lg-12"><div class="input-style-2"> <h6>Write in brief </h6><input type="text" placeholder="Short description" name="addMoreSubEvent[' +
+                i +
+                '][sub_event_short_desc]" value="{{ old('"sub_event_short_desc"') }}" />@if ($errors->has('"sub_event_short_desc"'))<div class="alert-danger">{{ $errors->first('"sub_event_short_desc"') }}</div>@endif</div></div><div class="col-lg-12"><div class="input-style-3"><label>Write all about this event </label><textarea name="addMoreSubEvent[' +
+                i +
+                '][sub_event_description]" id="summernote" cols="30" rows="10" placeholder="Discuss about the advantage, prize, venue, criteria etc ">{{ old('"sub_event_description"') }}</textarea>@if ($errors->has('"sub_event_description"'))<div class="alert-danger">{{ $errors->first('"sub_event_description"') }}</div>@endif</div></div><div class="text-center"><button class="btn btn-danger btn-sm" type="button" onclick="removeSubEvent('+formNo+')">Remove</button></div> </div></div></div></div><div class="col-lg-6" id="addbutton"><div class="text-center m-5 "><button type="button" class="btn-lg btn-primary btn-circle" onclick="addMoreSubEvent(' +
+                newI + ')"><i class="lni lni-circle-plus"></i> Add more</button></div></div>';
+            document.getElementById("addbutton").remove();
+            document.getElementById("subevents").innerHTML += newForm;
+            // i++;
+        }
+
+        function removeSubEvent(subevent_id){
+            const element = document.getElementById('subEvent'+subevent_id).remove();
+        }
+
+        window.onbeforeunload = function (e){
+            return "You will lost the data";
+
+        }
+
+     
+        // window.addEventListener("beforeunload", function(event) {
+        // event.returnValue = "Write something clever here..";
+        // $(function() {
+        //     $(window).on('beforeunload', function() {
+        //         return ';'
+        //     })
+        // });
+    </script>
+
 @endsection

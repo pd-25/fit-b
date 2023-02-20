@@ -3855,10 +3855,6 @@ h6,
 .fw-900 {
   font-weight: 900; }
 
-  {
-    margin: 0;
-    padding: 0;
-}
 
 html {
     height: 100%;
@@ -4099,6 +4095,13 @@ select.list-dt:focus {
     width: 100%;
     object-fit: cover;
 }
-  /* 00 */
+hr {
+  border: 3px solid;
+  border-radius: 3px;
+}
+
+.add-more-events{
+  margin: auto;
+} 
 
   
