@@ -38,13 +38,13 @@ class EventRequest extends FormRequest
                             'after_or_equal:start_date',
                         ],
 
-           'sub_event_name' => 'required|string|regex:/(^([a-zA-z]+)(\d+)?$)/u',
-           'sub_event_short_desc' => 'required|alpha_dash|max:300|',
-           'sub_event_description' => 'required|alpha_dash|max:2000',
-           'participant_age_limit' => 'required|numeric',
-           'prize' => 'required|string|max:200',
-           'second_prize' => 'required|string|max:200',
-           'third_prize' => 'required|string|max:200',
+        //    'sub_event_name' => 'required|string|regex:/(^([a-zA-z]+)(\d+)?$)/u',
+        //    'sub_event_short_desc' => 'required|alpha_dash|max:300|',
+        //    'sub_event_description' => 'required|alpha_dash|max:2000',
+        //    'participant_age_limit' => 'required|numeric',
+        //    'prize' => 'required|string|max:200',
+        //    'second_prize' => 'required|string|max:200',
+        //    'third_prize' => 'required|string|max:200',
 
                         								
         ];

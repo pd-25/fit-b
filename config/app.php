@@ -179,7 +179,8 @@ return [
 
         //pd Provider
         
-        App\ServiceProvider\User\UserserviceProvider::class
+        App\ServiceProvider\User\UserserviceProvider::class,
+        App\ServiceProvider\Event\EventServiceProvider::class,
     ],
 
     /*
