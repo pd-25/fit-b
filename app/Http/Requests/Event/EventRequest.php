@@ -6,29 +6,18 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class EventRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
     public function authorize()
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-   
     public function rules()
     {
         return [
-           'title' => 'required|string|regex:/(^([a-zA-z]+)(\d+)?$)/u',
-           'short_desc' => 'required|alpha_dash|max:300|',
-           'description' => 'required|alpha_dash|max:2000',
-           'venue' => 'required|alpha_dash|max:300',
+           'title' => 'required|string',
+           'short_desc' => 'required|string|max:300|',
+           'description' => 'string|max:2000',
+           'venue' => 'required|string|max:300',
            'start_date' => [
                             'date',
                             'after_or_equal:' . date('Y-m-d'), // not 'now' string

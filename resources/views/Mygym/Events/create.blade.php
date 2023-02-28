@@ -9,6 +9,9 @@
                 <!-- input style start -->
                 <div class="card-style mb-30">
                     <h6 class="mb-25">Fill event details</h6>
+                    @if(Session::has('msg'))
+                        <p class="alert alert-info">{{ Session::get('msg') }}</p>
+                    @endif
                     <div class="row">
                         <div class="col-md-6">
                             <div class="input-style-1">
@@ -42,6 +45,8 @@
                                 @endif
                             </div>
 
+                            
+                            
                             <div class="input-style-2">
                                 <label>Event banner image </label>
                                 <input type="file" name="image" value="{{ old('image') }}" class="form-control" />
@@ -92,7 +97,7 @@
                             Sub-event- <button class="btn btn-circle btn-primary" disabled>1</button>
                         </h2>
                         <div class="row mt-3">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="input-style-1">
                                     <h6>Sub-event name</label>
                                         <input type="text" placeholder="Full Name"
@@ -135,6 +140,17 @@
                                     @endif
                                 </div> --}}
 
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-style-2">
+                                    <label>Registration fee </label>
+                                    <input type="text" placeholder="Enter 0 if free"
+                                        name="addMoreSubEvent[0][fee]"
+                                        value="{{ old('fee') }}" />
+                                    @if ($errors->has('fee'))
+                                        <div class="alert-danger">{{ $errors->first('fee') }}</div>
+                                    @endif
+                                </div>
                             </div>
 
                             <div class="col-md-12">
@@ -226,11 +242,11 @@
             var newForm =
                 ' <div class="col-lg-6" id="subEvent'+formNo+'"><div class="card-style mb-30"><div class="input-style-2"><h2 class="text-center">Sub-event- <button class="btn btn-circle btn-primary" disabled>' +
                 formNo +
-                '</button></h2><div class="row mt-3"><div class="col-md-6"><div class="input-style-1"><h6>Sub-event name</label><input type="text" placeholder="Full Name" name="addMoreSubEvent[' +
+                '</button></h2><div class="row mt-3"><div class="col-md-12"><div class="input-style-1"><h6>Sub-event name</label><input type="text" placeholder="Full Name" name="addMoreSubEvent[' +
                 i +
                 '][sub_event_name]" value="{{ old('"sub_event_name"') }}" />@if ($errors->has('"sub_event_name"'))<div class="alert-danger">{{ $errors->first('"sub_event_name"') }}</div> @endif</div></div><div class="col-md-6"> <div class="input-style-2"><label>Participant age limit </label><input type="number" placeholder="participant age limit" name="addMoreSubEvent[' +
                 i +
-                '][participant_age_limit]" value="{{ old('"participant_age_limit"') }}" />@if ($errors->has('"participant_age_limit"'))<div class="alert-danger">{{ $errors->first('"participant_age_limit"') }}</div>@endif </div></div><div class="col-md-12"><div class="input-style-2"><label>1st prize</label><input type="text" name="addMoreSubEvent[0][prize]" value="{{ old('"prize"') }}">@if ($errors->has('"prize"'))<div class="alert-danger">{{ $errors->first('"prize"') }}</div>@endif</div></div><div class="col-md-12"><div class="input-style-2"><label>2nd prize</label><input type="text" name="addMoreSubEvent[0][second_prize]" value="{{ old('"second_prize"') }}">@if ($errors->has('"second_prize"'))<div class="alert-danger">{{ $errors->first('"second_prize"') }}</div>@endif </div> </div><div class="col-md-12"><div class="input-style-2"><label>3rd prize</label><input type="text" name="addMoreSubEvent[0][third_prize]" value="{{ old('"third_prize"') }}">@if ($errors->has('"third_prize"'))<div class="alert-danger">{{ $errors->first('"third_prize"') }}</div> @endif</div></div><div class="col-lg-12"><div class="input-style-2"> <h6>Write in brief </h6><input type="text" placeholder="Short description" name="addMoreSubEvent[' +
+                '][participant_age_limit]" value="{{ old('"participant_age_limit"') }}" />@if ($errors->has('"participant_age_limit"'))<div class="alert-danger">{{ $errors->first('"participant_age_limit"') }}</div>@endif </div></div> <div class="col-md-6"><div class="input-style-2"><label>Registration fee </label><input type="text" placeholder="Enter 0 if free" name="addMoreSubEvent['+i+'][fee]" value="{{ old('"fee"') }}" />@if ($errors->has('"fee"')) <div class="alert-danger">{{ $errors->first('"fee"') }}</div>@endif </div></div><div class="col-md-12"><div class="input-style-2"><label>1st prize</label><input type="text" name="addMoreSubEvent['+i+'][prize]" value="{{ old('"prize"') }}">@if ($errors->has('"prize"'))<div class="alert-danger">{{ $errors->first('"prize"') }}</div>@endif</div></div><div class="col-md-12"><div class="input-style-2"><label>2nd prize</label><input type="text" name="addMoreSubEvent['+i+'][second_prize]" value="{{ old('"second_prize"') }}">@if ($errors->has('"second_prize"'))<div class="alert-danger">{{ $errors->first('"second_prize"') }}</div>@endif </div> </div><div class="col-md-12"><div class="input-style-2"><label>3rd prize</label><input type="text" name="addMoreSubEvent['+i+'][third_prize]" value="{{ old('"third_prize"') }}">@if ($errors->has('"third_prize"'))<div class="alert-danger">{{ $errors->first('"third_prize"') }}</div> @endif</div></div><div class="col-lg-12"><div class="input-style-2"> <h6>Write in brief </h6><input type="text" placeholder="Short description" name="addMoreSubEvent[' +
                 i +
                 '][sub_event_short_desc]" value="{{ old('"sub_event_short_desc"') }}" />@if ($errors->has('"sub_event_short_desc"'))<div class="alert-danger">{{ $errors->first('"sub_event_short_desc"') }}</div>@endif</div></div><div class="col-lg-12"><div class="input-style-3"><label>Write all about this event </label><textarea name="addMoreSubEvent[' +
                 i +

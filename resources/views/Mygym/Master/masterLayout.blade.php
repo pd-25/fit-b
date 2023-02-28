@@ -237,7 +237,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-6">
                             <div class="title mb-30">
-                                <h2>My gym maneger</h2>
+                                <h2>@yield('page')</h2>
                             </div>
                         </div>
                         <!-- end col -->
