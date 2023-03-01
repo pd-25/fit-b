@@ -68,7 +68,7 @@
                                 </td>
                                 <td>
                                     <div class="action justify-content-end">
-                                     <a  href="{{ $gym_event->slug }}"><i class="text-success lni lni-eye"></i></a>
+                                     <a  href="{{ route('my-gym-events.show',$gym_event->slug ) }}"><i class="text-success lni lni-eye"></i></a>
                                             
                                        
                                         <button class="more-btn ml-10 dropdown-toggle" id="moreAction1"
