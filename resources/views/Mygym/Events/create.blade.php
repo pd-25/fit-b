@@ -1,4 +1,4 @@
-@extends('Mygym.Master.masterLayout');
+@extends('Mygym.Master.masterLayout')
 @section('title', 'Create-Event|MyGym')
 @section('content')
     <form action="{{ route('my-gym-events.store') }}" method="POST" class="mb-5" enctype="multipart/form-data">

@@ -1,6 +1,1 @@
-name, barcode(image/notmendatory), description, ManFuc dt, Exp dt, image,price, discount_price, ref_code_for_member, Brand, quantiy_available, owner_id, type(lucide, dust, tablate)
-
-
-
-rating table
- prductid,  user_id, comment, star
+get gymwise product

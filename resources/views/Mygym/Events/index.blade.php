@@ -1,4 +1,4 @@
-@extends('Mygym.Master.masterLayout');
+@extends('Mygym.Master.masterLayout')
 @section('title', 'Event|MyGym')
 @section('page', 'Event Manager')
 @section('content')

@@ -4,6 +4,7 @@
 use App\Http\Controllers\CustomAuth\SellerAuthController;
 use App\Http\Controllers\Mygym\Dashboard\GymDashboardController;
 use App\Http\Controllers\Mygym\Event\EventController;
+use App\Http\Controllers\Mygym\GymProduct\GymProductController;
 use Illuminate\Support\Facades\Route;
 
 /*  GymOwner Route   */
@@ -20,6 +21,7 @@ Route::prefix('my-gym/'.request()->ip().'/access')->group( function () {
 Route::middleware('mygym')->prefix('gym-administrator')->group(function () {
     Route::get('mygym-dashboard', [GymDashboardController::class, 'myGymDashboard'])->name('mygym.dashboard');
     Route::resource('my-gym-events', EventController::class);
+    Route::resource('my-gym-products', GymProductController::class);
     Route::get('logout', [GymDashboardController::class, 'logout'])->name('mygym.logout');
 
 });

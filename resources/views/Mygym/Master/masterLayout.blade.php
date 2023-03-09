@@ -52,6 +52,24 @@
                     </ul>
                 </li>
 
+                <li class="nav-item nav-item-has-children">
+                    <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_3"
+                        aria-controls="ddmenu_3" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon">
+                            <i class="lni lni-flags"></i>
+                        </span>
+                        <span class="text">Product Section</span>
+                    </a>
+                    <ul id="ddmenu_3" class="collapse dropdown-nav">
+                        <li>
+                            <a href="{{ route('my-gym-products.index') }}"> All Products </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('my-gym-products.create') }}"> Add Product </a>
+                        </li>
+                    </ul>
+                </li>
+
     </aside>
     <div class="overlay"></div>
     <!-- ======== sidebar-nav end =========== -->
@@ -240,22 +258,8 @@
                                 <h2>@yield('page')</h2>
                             </div>
                         </div>
-                        <!-- end col -->
-                        <div class="col-md-6">
-                            <div class="breadcrumb-wrapper mb-30">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item">
-                                            <a href="#0">Dashboard</a>
-                                        </li>
-                                        <li class="breadcrumb-item active" aria-current="page">
-                                            Fitbouncer
-                                        </li>
-                                    </ol>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- end col -->
+                       
+                       
                     </div>
                     <!-- end row -->
                 </div>

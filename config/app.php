@@ -181,6 +181,7 @@ return [
         
         App\ServiceProvider\User\UserserviceProvider::class,
         App\ServiceProvider\Event\EventServiceProvider::class,
+        App\ServiceProvider\GymProduct\GymProductServiceProvider::class
     ],
 
     /*
