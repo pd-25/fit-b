@@ -18,7 +18,8 @@ class GymProductController extends Controller
     
     public function index()
     {
-        return view('Mygym.GymProduct.index');
+        $data['my_products'] = $this->gym_products->getGymWiseProduct();
+        return view('Mygym.GymProduct.index', $data);
 
     }
 
@@ -34,52 +35,33 @@ class GymProductController extends Controller
        $data = $request->only('name','brand_name', 'manufacture_date', 'expiry_date', 'quantiy_available', 'product_type', 'barcode_image', 'description', 'currency', 'price', 'discount_price', 'referral_code_for_member');
        $data_images = $request->only('product_image');
        $this->gym_products->storeProduct($data, $data_images);
+       return redirect()->route('my-gym-products.index')->with('msg', 'Product Uploaded and sent for verification');
 
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show($id)
     {
-        //
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+   
+    public function edit($slug)
     {
-        //
+       $data['gym_product'] = $this->gym_products->getProduct($slug);
+       return view('Mygym.GymProduct.edit', $data); 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function update(Request $request, $id)
     {
-        //
+        // updateProduct  
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+  
     public function destroy($id)
     {
-        //
+        
     }
 }

@@ -4,6 +4,7 @@ namespace App\Repositories\GymProduct;
 
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class GymProductRepository implements GymProductInterface
 {
@@ -23,7 +24,7 @@ class GymProductRepository implements GymProductInterface
             }
             $data['slug'] = $slug;
             $data['seller_id'] = auth()->guard('mygym')->id();
-            $data['created_at']  = date('Y-m-d');
+            $data['created_at']  = date('Y-m-d H:i:s');
             $gym_product = DB::table('products')->insertGetId($data);
 
             if ($gym_product && $gym_product >= 0 && isset($data_images)) {
@@ -37,6 +38,41 @@ class GymProductRepository implements GymProductInterface
                     array_push($store_image, $imageData);
                 }
                 return DB::table('product_images')->insert($store_image);
+            } else {
+                return back('msg', 'Properly try again, some error occur');
+            }
+        } catch (\Throwable $th) {
+            return back()->with('msg', 'Properly try again, some error occur!');
+        }
+    }
+
+    public function updateProduct(array $data, $data_images, $slug)
+    {
+        try {
+            $product = Product::where('slug', $slug)->firstOrFail();
+            if (isset($data['barcode_image']) && !empty($data['barcode_image'])) {
+                $barcode_image = $data['barcode_image'];
+                $data['barcode_image'] = $this->singleImageUpload($barcode_image);
+                File::delete(public_path("storage/ProductBarcodeImages/" . $product->barcode_image));
+                $barcode_image->storeAs("public/ProductBarcodeImages", $data['barcode_image']);
+            }
+
+            $data['updated_at']  = date('Y-m-d H:i:s');
+            $gym_product = $product->update($data);
+
+            if ($gym_product && isset($data_images)) {
+                $store_image = [];
+                foreach ($data_images['product_image'] as $product_image) {
+                    $image = $product_image;
+                    $imageData['product_id']  = $product->id;
+                    $imageData['created_at']  = $data['created_at'];
+                    $imageData['image']  = $this->singleImageUpload($product_image);
+                    $image->storeAs("public/ProductImages", $imageData['image']);
+                    array_push($store_image, $imageData);
+                }
+                return DB::table('product_images')->insert($store_image);
+            } else {
+                return back('msg', 'Properly try again, some error occur');
             }
         } catch (\Throwable $th) {
             return back()->with('msg', 'Properly try again, some error occur!');
@@ -45,15 +81,18 @@ class GymProductRepository implements GymProductInterface
 
     public function singleImageUpload($imageData)
     {
-        $content_db = time() . rand(0000, 9999) . "." . $imageData->getClientOriginalExtension();
-        return $content_db;
+        return time() . rand(0000, 9999) . "." . $imageData->getClientOriginalExtension();
+    }
+
+    public function getProduct($slug) {
+        return Product::where('slug', $slug)->with('product_images')->firstOrFail();
     }
 
     public function getGymWiseProduct()
     {
-        return DB::table('products')->where('seller_id', auth()->guard('mygym')->id())
-            ->select('products.slug', 'products.name', 'products.brand', 'products.slug', 'products.slug', 'product_images.image')
-            ->join('product_images', 'products.id', 'product_images.product_id')
+        return Product::where('seller_id', auth()->guard('mygym')->id())->with('product_images')
+            // ->select('products.slug', 'products.name', 'products.brand', 'products.slug', 'products.slug', 'product_images.image')
+            // ->join('product_images', 'products.id', 'product_images.product_id')
             ->get();
     }
 }

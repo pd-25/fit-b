@@ -256,6 +256,9 @@
                         <div class="col-md-6">
                             <div class="title mb-30">
                                 <h2>@yield('page')</h2>
+                                @if (Session::has('msg'))
+                                    <p class="alert alert-info">{{ Session::get('msg') }}</p>
+                                @endif
                             </div>
                         </div>
                        
