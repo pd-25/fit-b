@@ -42,7 +42,7 @@ class GymProductRepository implements GymProductInterface
                 return back('msg', 'Properly try again, some error occur');
             }
         } catch (\Throwable $th) {
-            return back()->with('msg', 'Properly try again, some error occur!');
+            return back()->with('msg', $th->getMessage());
         }
     }
 
@@ -58,9 +58,9 @@ class GymProductRepository implements GymProductInterface
             }
 
             $data['updated_at']  = date('Y-m-d H:i:s');
-            $gym_product = $product->update($data);
-
-            if ($gym_product && isset($data_images)) {
+// dd($data_images);
+            if (!empty($data_images)) {
+                // dd('image');
                 $store_image = [];
                 foreach ($data_images['product_image'] as $product_image) {
                     $image = $product_image;
@@ -70,12 +70,14 @@ class GymProductRepository implements GymProductInterface
                     $image->storeAs("public/ProductImages", $imageData['image']);
                     array_push($store_image, $imageData);
                 }
-                return DB::table('product_images')->insert($store_image);
-            } else {
-                return back('msg', 'Properly try again, some error occur');
+                DB::table('product_images')->insert($store_image);
             }
+            // dd($data);
+
+            return $gym_product = $product->update($data);
+
         } catch (\Throwable $th) {
-            return back()->with('msg', 'Properly try again, some error occur!');
+            return back()->with('msg', $th->getMessage());
         }
     }
 
@@ -84,7 +86,8 @@ class GymProductRepository implements GymProductInterface
         return time() . rand(0000, 9999) . "." . $imageData->getClientOriginalExtension();
     }
 
-    public function getProduct($slug) {
+    public function getProduct($slug)
+    {
         return Product::where('slug', $slug)->with('product_images')->firstOrFail();
     }
 

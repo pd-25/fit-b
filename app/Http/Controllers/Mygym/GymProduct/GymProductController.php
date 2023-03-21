@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Mygym\GymProduct;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\GymProductRequest;
+use App\Http\Requests\Product\GymProductUpdateRequest;
 use App\Repositories\GymProduct\GymProductInterface;
 use Illuminate\Http\Request;
 
@@ -54,9 +55,14 @@ class GymProductController extends Controller
     }
 
  
-    public function update(Request $request, $id)
+    public function update(GymProductUpdateRequest $request, $slug)
     {
-        // updateProduct  
+        
+        $data = $request->only('name','brand_name', 'manufacture_date', 'expiry_date', 'quantiy_available', 'product_type', 'barcode_image', 'description', 'currency', 'price', 'discount_price', 'referral_code_for_member');
+        $data_images = $request->only('product_image');
+        $this->gym_products->updateProduct($data, $data_images, $slug);
+        return redirect()->route('my-gym-products.index')->with('msg', 'Product updated successfully');
+          
     }
 
   
