@@ -8,15 +8,15 @@
 	@include('User.Home.coverImage'); {{-- photo section --}}
 		
 	<section>
-		<div class="gap gray-bg">
-			<div class="container">
+		<div class="gap gray-bg justify-content-center">
+			<div class="body-widht">
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="row merged20" id="page-contents">
 							<div class="col-lg-3 leftSide">
 							@include('User.Home.leftSideBar');
 							</div>
-							<div class="col-lg-6">
+							<div class="col-lg-5">
 								<div class="loadMore">
 									
 
@@ -31,7 +31,7 @@
 								
 								</div>
 							</div>
-							<div class="col-lg-3">
+							<div class="col-lg-4">
 
 								
 

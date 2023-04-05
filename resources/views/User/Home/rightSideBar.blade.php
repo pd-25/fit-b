@@ -1,4 +1,4 @@
-{{-- <aside class="sidebar static">
+<aside class="sidebar static">
     <div class="widget">
         <div class="banner medium-opacity bluesh">
             <div style="background-image: url(images/resources/baner-widgetbg.jpg)" class="bg-image"></div>
@@ -13,20 +13,89 @@
                 <span>like them all</span>
                 <a href="#" title="" data-ripple="">start now!</a>
             </div>
-        </div>											
+        </div>
     </div>
     <div class="widget friend-list stick-widget">
-        <h4 class="widget-title">Friends</h4>
+        <h4 class="widget-title">Fitness Market</h4>
         <div id="searchDir"></div>
         <ul id="people-list" class="friendz-list">
-            <li>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card-height">
+                    <div class="card">
+                        <img src="https://img.freepik.com/free-vector/realistic-energy-drink-advertisement_23-2148150917.jpg?size=338&ext=jpg" alt="Denim Jeans" style="width:100%">
+                        <h1>Tailored Jeans</h1>
+                        <p class="price">$19.99</p>
+                        <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun
+                            denim lorem jeansum.</p>
+                        <p><button>Add to Cart</button></p>
+                    </div>    
+                    </div>
+                    
+                </div>
+                <div class="col-md-4">
+                    <div class="card-height">
+                    <div class="card">
+                        <img src="https://img.freepik.com/free-vector/realistic-energy-drink-advertisement_23-2148150917.jpg?size=338&ext=jpg" alt="Denim Jeans" style="width:100%">
+                        <h1>Tailored Jeans</h1>
+                        <p class="price">$19.99</p>
+                        <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun
+                            denim lorem jeansum.</p>
+                        <p><button>Add to Cart</button></p>
+                    </div>    
+                    </div>
+                    
+                </div>
+                <div class="col-md-4">
+                    <div class="card-height">
+                    <div class="card">
+                        <img src="https://img.freepik.com/free-vector/realistic-energy-drink-advertisement_23-2148150917.jpg?size=338&ext=jpg" alt="Denim Jeans" style="width:100%">
+                        <h1>Tailored Jeans</h1>
+                        <p class="price">$19.99</p>
+                        <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun
+                            denim lorem jeansum.</p>
+                        <p><button>Add to Cart</button></p>
+                    </div>    
+                    </div>
+                    
+                </div>
+                <div class="col-md-4">
+                    <div class="card-height">
+                    <div class="card">
+                        <img src="https://img.freepik.com/free-vector/realistic-energy-drink-advertisement_23-2148150917.jpg?size=338&ext=jpg" alt="Denim Jeans" style="width:100%">
+                        <h1>Tailored Jeans</h1>
+                        <p class="price">$19.99</p>
+                        <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun
+                            denim lorem jeansum.</p>
+                        <p><button>Add to Cart</button></p>
+                    </div>    
+                    </div>
+                    
+                </div>
+                <div class="col-md-4">
+                    <div class="card-height">
+                    <div class="card">
+                        <img src="https://img.freepik.com/free-vector/realistic-energy-drink-advertisement_23-2148150917.jpg?size=338&ext=jpg" alt="Denim Jeans" style="width:100%">
+                        <h1>Tailored Jeans</h1>
+                        <p class="price">$19.99</p>
+                        <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun
+                            denim lorem jeansum.</p>
+                        <p><button>Add to Cart</button></p>
+                    </div>    
+                    </div>
+                    
+                </div>
+            </div>
+            {{-- <li>
                 <figure>
                     <img src="{{ asset('Frontend/images/resources/friend-avatar.jpg') }}" alt="">
                     <span class="status f-online"></span>
                 </figure>
                 <div class="friendz-meta">
                     <a href="time-line.html">bucky barnes</a>
-                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7007191e041502031f1c14150230171d11191c5e131f1d">[email&#160;protected]</a></i>
+                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__"
+                            data-cfemail="7007191e041502031f1c14150230171d11191c5e131f1d">[email&#160;protected]</a></i>
                 </div>
             </li>
             <li>
@@ -36,7 +105,8 @@
                 </figure>
                 <div class="friendz-meta">
                     <a href="time-line.html">Sarah Loren</a>
-                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e28083908c8791a2858f838b8ecc818d8f">[email&#160;protected]</a></i>
+                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__"
+                            data-cfemail="e28083908c8791a2858f838b8ecc818d8f">[email&#160;protected]</a></i>
                 </div>
             </li>
             <li>
@@ -46,7 +116,8 @@
                 </figure>
                 <div class="friendz-meta">
                     <a href="time-line.html">jason borne</a>
-                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="563c372539383416313b373f3a7835393b">[email&#160;protected]</a></i>
+                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__"
+                            data-cfemail="563c372539383416313b373f3a7835393b">[email&#160;protected]</a></i>
                 </div>
             </li>
             <li>
@@ -56,66 +127,72 @@
                 </figure>
                 <div class="friendz-meta">
                     <a href="time-line.html">Cameron diaz</a>
-                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="137972607c7d7153747e727a7f3d707c7e">[email&#160;protected]</a></i>
+                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__"
+                            data-cfemail="137972607c7d7153747e727a7f3d707c7e">[email&#160;protected]</a></i>
                 </div>
             </li>
             <li>
-                
+
                 <figure>
                     <img src="{{ asset('Frontend/images/resources/friend-avatar5.jpg') }}" alt="">
                     <span class="status f-online"></span>
                 </figure>
                 <div class="friendz-meta">
                     <a href="time-line.html">daniel warber</a>
-                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bad0dbc9d5d4d8faddd7dbd3d694d9d5d7">[email&#160;protected]</a></i>
+                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__"
+                            data-cfemail="bad0dbc9d5d4d8faddd7dbd3d694d9d5d7">[email&#160;protected]</a></i>
                 </div>
             </li>
             <li>
-                
+
                 <figure>
                     <img src="{{ asset('Frontend/images/resources/friend-avatar6.jpg') }}" alt="">
                     <span class="status f-away"></span>
                 </figure>
                 <div class="friendz-meta">
                     <a href="time-line.html">andrew</a>
-                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2943485a46474b694e44484045074a4644">[email&#160;protected]</a></i>
+                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__"
+                            data-cfemail="2943485a46474b694e44484045074a4644">[email&#160;protected]</a></i>
                 </div>
             </li>
             <li>
-                
+
                 <figure>
                     <img src="{{ asset('Frontend/images/resources/friend-avatar7.jpg') }}" alt="">
                     <span class="status f-off"></span>
                 </figure>
                 <div class="friendz-meta">
                     <a href="time-line.html">amy watson</a>
-                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f39992809c9d91b3949e929a9fdd909c9e">[email&#160;protected]</a></i>
+                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__"
+                            data-cfemail="f39992809c9d91b3949e929a9fdd909c9e">[email&#160;protected]</a></i>
                 </div>
             </li>
             <li>
-                
+
                 <figure>
                     <img src="{{ asset('Frontend/images/resources/friend-avatar5.jpg') }}" alt="">
                     <span class="status f-online"></span>
                 </figure>
                 <div class="friendz-meta">
                     <a href="time-line.html">daniel warber</a>
-                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="660c071509080426010b070f0a4805090b">[email&#160;protected]</a></i>
+                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__"
+                            data-cfemail="660c071509080426010b070f0a4805090b">[email&#160;protected]</a></i>
                 </div>
             </li>
             <li>
-                
+
                 <figure>
                     <img src="{{ asset('Frontend/images/resources/friend-avatar2.jpg') }}" alt="">
                     <span class="status f-away"></span>
                 </figure>
                 <div class="friendz-meta">
                     <a href="time-line.html">Sarah Loren</a>
-                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f59794879b9086b59298949c99db969a98">[email&#160;protected]</a></i>
+                    <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__"
+                            data-cfemail="f59794879b9086b59298949c99db969a98">[email&#160;protected]</a></i>
                 </div>
-            </li>
+            </li> --}}
         </ul>
-        <div class="chat-box">
+        {{-- <div class="chat-box">
             <div class="chat-head">
                 <span class="status f-online"></span>
                 <h6>Bucky Barnes</h6>
@@ -127,30 +204,39 @@
             <div class="chat-list">
                 <ul>
                     <li class="me">
-                        <div class="chat-thumb"><img src="{{ asset('Frontend/images/resources/chatlist1.jpg') }}" alt=""></div>
+                        <div class="chat-thumb"><img src="{{ asset('Frontend/images/resources/chatlist1.jpg') }}"
+                                alt=""></div>
                         <div class="notification-event">
                             <span class="chat-message-item">
-                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks
+                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts
+                                and Jake’s gonna get the drinks
                             </span>
-                            <span class="notification-date"><time datetime="2004-07-24T18:18" class="entry-date updated">Yesterday at 8:10pm</time></span>
+                            <span class="notification-date"><time datetime="2004-07-24T18:18"
+                                    class="entry-date updated">Yesterday at 8:10pm</time></span>
                         </div>
                     </li>
                     <li class="you">
-                        <div class="chat-thumb"><img src="{{ asset('Frontend/images/resources/chatlist2.jpg') }}" alt=""></div>
+                        <div class="chat-thumb"><img src="{{ asset('Frontend/images/resources/chatlist2.jpg') }}"
+                                alt=""></div>
                         <div class="notification-event">
                             <span class="chat-message-item">
-                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks
+                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts
+                                and Jake’s gonna get the drinks
                             </span>
-                            <span class="notification-date"><time datetime="2004-07-24T18:18" class="entry-date updated">Yesterday at 8:10pm</time></span>
+                            <span class="notification-date"><time datetime="2004-07-24T18:18"
+                                    class="entry-date updated">Yesterday at 8:10pm</time></span>
                         </div>
                     </li>
                     <li class="me">
-                        <div class="chat-thumb"><img src="{{ asset('Frontend/images/resources/chatlist1.jpg') }}" alt=""></div>
+                        <div class="chat-thumb"><img src="{{ asset('Frontend/images/resources/chatlist1.jpg') }}"
+                                alt=""></div>
                         <div class="notification-event">
                             <span class="chat-message-item">
-                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks
+                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts
+                                and Jake’s gonna get the drinks
                             </span>
-                            <span class="notification-date"><time datetime="2004-07-24T18:18" class="entry-date updated">Yesterday at 8:10pm</time></span>
+                            <span class="notification-date"><time datetime="2004-07-24T18:18"
+                                    class="entry-date updated">Yesterday at 8:10pm</time></span>
                         </div>
                     </li>
                 </ul>
@@ -176,6 +262,6 @@
                     <button type="submit"></button>
                 </form>
             </div>
-        </div>
+        </div> --}}
     </div><!-- friends list sidebar -->
-</aside> --}}
+</aside>

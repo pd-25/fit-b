@@ -1,53 +1,55 @@
+<aside class="sidebar stick-widget">
+    <div class="widget">
+        <h4 class="widget-title">Socials</h4>
+        <ul class="socials">
+            <li class="facebook">
+                <a title="" href="#"><i class="fa fa-facebook"></i> <span>facebook</span> <ins>45
+                        likes</ins></a>
+            </li>
+            <li class="twitter">
+                <a title="" href="#"><i class="fa fa-twitter"></i> <span>twitter</span><ins>25
+                        likes</ins></a>
+            </li>
+            <li class="google">
+                <a title="" href="#"><i class="fa fa-google"></i> <span>google</span><ins>35 likes</ins></a>
+            </li>
+            <li class="instagram">
+                <a title="" href="#"><i class="fa fa-instagram"></i> <span>instagram</span><ins>60
+                        likes</ins></a>
+            </li>
+        </ul>
+    </div>
+    <div class="widget">
+        <h4 class="widget-title">Shortcuts</h4>
+        <ul class="naves">
+            <li>
+                <i class="ti-user"></i>
+                <a href="#" title="">Profile</a>
+            </li>
+            <li>
+                <i class="ti-widget"></i>
+                <a href="#" title="">Events</a>
+            </li>
+            <li>
+                <i class="ti-mouse-alt"></i>
+                <a href="#" title="">Challenges</a>
+            </li>
+            <li>
+                <i class="ti-files"></i>
+                <a href="#" title="">Products</a>
+            </li>
+            <li>
+                <i class="ti-user"></i>
+                <a href="#" title="">Gym</a>
+            </li>
 
-    <aside class="sidebar static">
-        <div class="widget">
-                <h4 class="widget-title">Socials</h4>
-                <ul class="socials">
-                    <li class="facebook">
-                        <a title="" href="#"><i class="fa fa-facebook"></i> <span>facebook</span> <ins>45 likes</ins></a>
-                    </li>
-                    <li class="twitter">
-                        <a title="" href="#"><i class="fa fa-twitter"></i> <span>twitter</span><ins>25 likes</ins></a>
-                    </li>
-                    <li class="google">
-                        <a title="" href="#"><i class="fa fa-google"></i> <span>google</span><ins>35 likes</ins></a>
-                    </li>
-                    <li class="instagram">
-                        <a title="" href="#"><i class="fa fa-instagram"></i> <span>instagram</span><ins>60 likes</ins></a>
-                    </li>
-                </ul>
-            </div>
-        <div class="widget">
-            <h4 class="widget-title">Shortcuts</h4>
-            <ul class="naves">
-                <li>
-                    <i class="ti-user"></i>
-                    <a href="#" title="">Profile</a>
-                </li>
-                <li>
-                    <i class="ti-widget"></i>
-                    <a href="#" title="">Events</a>
-                </li>
-                <li>
-                    <i class="ti-mouse-alt"></i>
-                    <a href="#" title="">Challenges</a>
-                </li>
-                <li>
-                    <i class="ti-files"></i>
-                    <a href="#" title="">Products</a>
-                </li>
-                <li>
-                    <i class="ti-user"></i>
-                    <a href="#" title="">Gym</a>
-                </li>
-                
-                <li>
-                    <i class="ti-power-off"></i>
-                    <a href="landing.html" title="">Logout</a>
-                </li>
-            </ul>
-        </div><!-- Shortcuts -->
-        {{-- <div class="widget">
+            <li>
+                <i class="ti-power-off"></i>
+                <a href="landing.html" title="">Logout</a>
+            </li>
+        </ul>
+    </div><!-- Shortcuts -->
+    {{-- <div class="widget">
             <h4 class="widget-title">Recent Activity</h4>
             <ul class="activitiez">
                 <li>
@@ -72,7 +74,7 @@
                 </li>
             </ul>
         </div><!-- recent activites --> --}}
-        {{-- <div class="widget stick-widget">
+    {{-- <div class="widget stick-widget">
             <h4 class="widget-title">Who's follownig</h4>
             <ul class="followers">
                 <li>
@@ -112,5 +114,5 @@
                 </li>
             </ul>
         </div><!-- who's following --> --}}
-    </aside>
+</aside>
 <!-- sidebar -->
