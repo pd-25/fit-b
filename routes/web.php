@@ -4,6 +4,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
+use App\Http\Controllers\Admin\Products\ProductController;
 use App\Http\Controllers\Admin\User\UserController;
 use App\Http\Controllers\CustomAuth\AdminAuthController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,7 @@ Route::post('login', [AdminAuthController::class, 'login'])->name('admin.loggedi
 Route::middleware('adminAuth')->prefix('superadmin')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
     Route::resource("users", UserController::class);
+    Route::resource("admin-products", ProductController::class);
     Route::get('logout', [DashboardController::class, 'logout'])->name('admin.logout');
 
 });

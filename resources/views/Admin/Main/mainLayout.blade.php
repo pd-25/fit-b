@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-    
+
     <title>FITBOUNCER:DASHBOARD</title>
- 
+
     <!-- Styles -->
-  
+
     <link href="{{ asset('Admin/css/lib/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('Admin/css/lib/themify-icons.css') }}" rel="stylesheet">
-    
+
     <link href="{{ asset('Admin/css/lib/owl.theme.default.min.css') }}" rel="stylesheet" />
-    
+
     <link href="{{ asset('Admin/css/lib/menubar/sidebar.css') }}" rel="stylesheet">
     <link href="{{ asset('Admin/css/lib/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('Admin/css/lib/helper.css') }}" rel="stylesheet">
@@ -25,9 +25,11 @@
             <div class="nano-content">
                 <ul>
                     <div class="logo"><a href="{{ route('admin.dashboard') }}">
-                            <img height="60" width="200" src="{{ asset('Frontend/images/Final-removebg-preview 1 (4).png') }}" alt="" /> </a></div>
+                            <img height="60" width="200"
+                                src="{{ asset('Frontend/images/Final-removebg-preview 1 (4).png') }}" alt="" />
+                        </a></div>
                     <li class="label">Main</li>
-                    <li><a  href="{{ route('admin.dashboard') }}"><i class="ti-home"></i> Dashboard </a>
+                    <li><a href="{{ route('admin.dashboard') }}"><i class="ti-home"></i> Dashboard </a>
                         {{-- <ul>
                             <li><a href="index.html">Dashboard 1</a></li>
                             <li><a href="index.html">Dashboard 2</a></li>
@@ -38,9 +40,22 @@
                     <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Users <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li class={{ Route::is('users.index') ? 'active' : '' }}><a href="{{ route("users.index") }}">Users</a></li>
-                            <li class={{ Route::is('users.create') ? 'active' : '' }}><a href="{{ route("users.create") }}">Add User</a></li>
-                            
+                            <li class={{ Route::is('users.index') ? 'active' : '' }}><a
+                                    href="{{ route('users.index') }}">Users</a></li>
+                            <li class={{ Route::is('users.create') ? 'active' : '' }}><a
+                                    href="{{ route('users.create') }}">Add User</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Products <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li class={{ Route::is('admin-products.index') ? 'active' : '' }}><a
+                                    href="{{ route('admin-products.index') }}">Products</a></li>
+                            <li class={{ Route::is('admin-products.create') ? 'active' : '' }}><a
+                                    href="{{ route('admin-products.create') }}">Add Product</a></li>
+
                         </ul>
                     </li>
                     {{-- <li><a href="app-event-calender.html"><i class="ti-calendar"></i> Calender </a></li>
@@ -144,11 +159,11 @@
                         </div>
                     </div>
                     <div class="float-right">
-                      
+
                         <div class="dropdown dib">
-                       
+
                             <div class="header-icon dropdown">
-                               
+
                                 <span class="user-avatar" data-toggle="dropdown" aria-expanded="false">Fitboin
                                     <i class="ti-angle-down f-s-10"></i>
                                 </span>
@@ -161,14 +176,14 @@
                                                     <span>Profile</span>
                                                 </a>
                                             </li>
-    
+
                                             <li>
                                                 <a href="{{ url('admin/change-password') }}">
                                                     <i class="ti-settings"></i>
                                                     <span>Change Password</span>
                                                 </a>
                                             </li>
-    
+
                                             <li>
                                                 <a href="{{ route('admin.logout') }}">
                                                     <i class="ti-power-off"></i>
@@ -178,7 +193,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                              </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -190,7 +205,7 @@
     <div class="content-wrap">
         <div class="main">
             <div class="container-fluid">
-               @yield('content')
+                @yield('content')
             </div>
         </div>
     </div>
@@ -207,7 +222,7 @@
     <script src="{{ asset('Admin/js/scripts.js') }}"></script>
     <!-- bootstrap -->
 
-    
+
 </body>
 
 </html>

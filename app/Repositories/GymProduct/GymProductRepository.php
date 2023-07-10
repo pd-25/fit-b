@@ -93,7 +93,7 @@ class GymProductRepository implements GymProductInterface
 
     public function getGymWiseProduct()
     {
-        return Product::where('seller_id', auth()->guard('mygym')->id())->with('product_images')
+        return Product::where('seller_id', auth()->guard('mygym')->id())->with('product_images', 'product_seller')
             // ->select('products.slug', 'products.name', 'products.brand', 'products.slug', 'products.slug', 'product_images.image')
             // ->join('product_images', 'products.id', 'product_images.product_id')
             ->get();
